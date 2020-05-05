@@ -8,14 +8,14 @@ const ClientItems = (props) => {
           <div className="animated" data-animation-effect="flipInX">
             <div className="hidden-xs profile">
               <img
-                alt=""
+                alt={item.title}
                 className="img-responsive img-thumbnail"
                 src={item.image}
               />
             </div>
             <div className="content">
               <h3>{item.title}</h3>
-              <p className="detail">{item.body}</p>
+              <p className="detail">"{item.body}"</p>
               <p className="source">
                 {item.position}
                 <br />

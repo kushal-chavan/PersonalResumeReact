@@ -4,7 +4,7 @@ import Profile from "../profile/Profile";
 import Qualities from "../qualities/Qualities";
 import Resume from "../resume/Resume";
 import Clients from "../clients/Clients";
-import Skilles from "../skilles/Skilles";
+import Skills from "../skills/Skills";
 import Contact from "../contact/Contact";
 import Footer from "../footer/Footer";
 
@@ -17,7 +17,7 @@ export class Main extends Component {
         <Qualities />
         <Resume />
         <Clients />
-        <Skilles />
+        <Skills />
         <Contact />
         <Footer />
       </div>
