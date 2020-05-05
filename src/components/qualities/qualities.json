@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "icon": "Geek",
+        "title": "Impressive technical skills",
+        "body": "The years of experience I carried so far has given me a great foundation in many areas of various programming languages like Java, Javascript, Go Lang, Scala, etc., and exposure in many other technical areas."
+    },
+    {
+        "id": 2,
+        "icon": "Smile",
+        "title": "Willingness to learn.",
+        "body": "It's important for me as a programmer to have extreme interest in following the latest trends and eager to participate in any continuing education opportunities that are available and so I 'GOOGLE' for it very often."
+    },
+    {
+        "id": 3,
+        "icon": "Bug",
+        "title": "Debugging skills",
+        "body": "Instead of spending hours searching for issues blindly, I prefer to carefully investigate the code and research for possible issues until an answer is found."
+    },
+    {
+        "id": 4,
+        "icon": "Smart",
+        "title": "Problem solving skills",
+        "body": "Programming can best be compared to solving an extremely difficult math equation. I thrive on finding ways to make something work, despite the odds. I foresee every possible scenario & situation to solve a given problem thinking out of the box."
+    },
+    {
+        "id": 5,
+        "icon": "Monitor-Tablet",
+        "title": "Passion for the work",
+        "body": "I gladly put in long hours when the situation merits in. I am more of a self proclaimed 'computer geek', spending most of the time creating apps for myself, friends & community, building and tweaking servers, learning new technical and non technical things while in my spare time."
+    },
+    {
+        "id": 6,
+        "icon": "Cool",
+        "title": "Grace under fire",
+        "body": "Almost 90% of the time, I always was able to handle tight deadlines and even the most stressful situations calmly and gracefully, and most importantly be able to continue working. All what I require is a complete silence environment to thrive."
+    },
+    {
+        "id": 7,
+        "icon": "Wifi-2",
+        "title": "People skills",
+        "body": "I regularly interact with client, managers, business users, co-workers for various reasons. I tend to participate in client meetings, business meetings, etc., to keep up with the ongoing happenings and also explain them how a system works."
+    },
+    {
+        "id": 8,
+        "icon": "Sleeping",
+        "title": "Laziness",
+        "body": "Yes, being a human, I sometimes go lazy, which I do not consider it to be a bad trait to which would impact my productivity. Instead being so, I sometimes find a best way to do something quickly in a more efficient way."
+    },
+    {
+        "id": 9,
+        "icon": "Idea-3",
+        "title": "Business perspective",
+        "body": "Being a business-focussed programmer, it's not easy for me to lose sight of the big picture while focusing on creating one piece of software. I do come up with suggestions and ideas for new applications that can improve operations and move beyond the current application."
+    },
+    {
+        "id": 10,
+        "icon": "Idea-4",
+        "title": "Ability to plan",
+        "body": "Rather than jumping into a new assignment, I first learn as much possible about the desired end product. Once I complete that analysis, I would go with design in mind before typing in the first line of code."
+    },
+    {
+        "id": 11,
+        "icon": "Bow-6",
+        "title": "Ability to handle failure",
+        "body": "I always love to fail first and pass later while programming. In fact, failure is almost a certainity. I rarely get everything right on the first try. However, I see errors and bugs as a challenge rather than a sign of defeat. I have the ability to start over from scratch if necessary, even after hours of work."
+    },
+    {
+        "id": 12,
+        "icon": "Business-Mens",
+        "title": "Teamwork mentality",
+        "body": "I rarely get the oppurtunity to work alone. I always carry the ability to collaberately work with clients, managers, business users, marketing and sales staff, and fellow programmers (sometimes do pair programming, based on needs)."
+    },
+    {
+        "id": 13,
+        "icon": "Professor",
+        "title": "Willingness to research",
+        "body": "As my career progressed working with variety of different clients, it wasn't just researching the programming language api kept me rolling but it was essentially important for me to understand the business structure for the client I work for, which eventually ended up having me the willingness to research the business."
+    },
+    {
+        "id": 14,
+        "icon": "Synchronize",
+        "title": "MultiTasking & Preferred Work Environment",
+        "body": "Whenever I feel I am confident enough, I sometimes multitask, to speed up the process or save time. I feel confident that my competency on deliverables, problem-solving skills and debugging skills are more productive when working in a quiet environment rather than working in chaos."
+    },
+    {
+        "id": 15,
+        "icon": "Sand-watch2",
+        "title": "Respect for deadlines",
+        "body": "I do work on projects with deadlines and I respect that. It makes me more responsible by adhering to timelines, if I am preparing for something or want to achieve something, I would rather set a examination date or a deadline date first."
+    }
+]

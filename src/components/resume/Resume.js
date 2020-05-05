@@ -1,6 +1,12 @@
 import React, { Component } from "react";
+import WorkExperience from './WorkExperience.json';
+import Experience from './ExperienceItems'
 
 export class Resume extends Component {
+  state = {
+    experience: WorkExperience,
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -181,6 +187,7 @@ export class Resume extends Component {
                   </div>
                 </div>
               </div>
+              {/* Work Experience */}
               <div className="row work-experience">
                 <div className="col-md-10 col-md-offset-1">
                   <h3>
@@ -189,190 +196,11 @@ export class Resume extends Component {
                     2008 - Till Present
                   </h3>
                   <div className="panel-group resume" id="work">
-                    <div className="resume-item">
-                      <div className="resume-year">
-                        <span className="resume-year">2016 - NOW</span>
-                      </div>
-                      <div className="resume-btn">
-                        <a
-                          href="#work1"
-                          data-parent="#work"
-                          data-toggle="collapse"
-                        >{null}</a>
-                      </div>
-                      <div className="panel">
-                        <div className="panel-heading">
-                          <div className="panel-title">
-                            <h4 className="resume-title">
-                              Compass Group USA - Sr. Software Engineer.
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="resume-item">
-                      <div className="resume-year">
-                        <span className="resume-year">2015 - 2016</span>
-                      </div>
-                      <div className="resume-btn">
-                        <a
-                          href="#work1"
-                          data-parent="#work"
-                          data-toggle="collapse"
-                        >{null}</a>
-                      </div>
-                      <div className="panel">
-                        <div className="panel-heading">
-                          <div className="panel-title">
-                            <h4 className="resume-title">
-                              Goldman Sachs. - Sr. Principal IT Consultant.
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="resume-item">
-                      <div className="resume-year">
-                        <span className="resume-year">2014 - 2015</span>
-                      </div>
-                      <div className="resume-btn">
-                        <a
-                          href="#work2"
-                          data-parent="#work "
-                          data-toggle="collapse"
-                        >{null}</a>
-                      </div>
-                      <div className="panel">
-                        <div className="panel-heading">
-                          <div className="panel-title">
-                            <h4 className="resume-title">
-                              VMware Inc. - Sr. Principle Software Engineer.
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="resume-item">
-                      <div className="resume-year">
-                        <span className="resume-year">2012 - 2013</span>
-                      </div>
-                      <div className="resume-btn">
-                        <a
-                          href="#work4"
-                          data-parent="#work"
-                          data-toggle="collapse"
-                        >{null}</a>
-                      </div>
-                      <div className="panel">
-                        <div className="panel-heading">
-                          <div className="panel-title">
-                            <h4 className="resume-title">
-                              Morgan Stanley. - Sr. Software Engineer Consultant
-                              - Remote.
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="resume-item">
-                      <div className="resume-year">
-                        <span className="resume-year">2011 - 2014</span>
-                      </div>
-                      <div className="resume-btn">
-                        <a
-                          href="#work5"
-                          data-parent="#work"
-                          data-toggle="collapse"
-                        >{null}</a>
-                      </div>
-                      <div className="panel">
-                        <div className="panel-heading">
-                          <div className="panel-title">
-                            <h4 className="resume-title">
-                              Deloitte LLC. - Sr. IT Consultant.
-                            </h4>
-                            <br />
-                            <span>
-                              - Department of Children and Family Services
-                              (DCFS) Louisana.
-                            </span>
-                            <br />
-                            <span>
-                              - Department of Health and Social Services (DHSS)
-                              Delaware.
-                            </span>
-                            <br />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="resume-item">
-                      <div className="resume-year">
-                        <span className="resume-year">2010 - 2011</span>
-                      </div>
-                      <div className="resume-btn">
-                        <a
-                          href="#work6"
-                          data-parent="#work"
-                          data-toggle="collapse"
-                        >{null}</a>
-                      </div>
-                      <div className="panel">
-                        <div className="panel-heading">
-                          <div className="panel-title">
-                            <h4 className="resume-title">
-                              Chrysler (FCA). - IT Consultant
-                            </h4>
-                            <br />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="resume-item">
-                      <div className="resume-year">
-                        <span className="resume-year">2008 - 2009</span>
-                      </div>
-                      <div className="resume-btn">
-                        <a
-                          href="#work7"
-                          data-parent="#work"
-                          data-toggle="collapse"
-                        >{null}</a>
-                      </div>
-                      <div className="panel">
-                        <div className="panel-heading">
-                          <div className="panel-title">
-                            <h4 className="resume-title">
-                              Verizon Telecom. - Software Engineer Consultant
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="resume-item">
-                      <div className="resume-year">
-                        <span className="resume-year">2008 - 2008</span>
-                      </div>
-                      <div className="resume-btn">
-                        <a
-                          href="#work8"
-                          data-parent="#work"
-                          data-toggle="collapse"
-                        >{null}</a>
-                      </div>
-                      <div className="panel">
-                        <div className="panel-heading">
-                          <div className="panel-title">
-                            <h4 className="resume-title">
-                              N2 Services Inc. - Programmer Analyst - Intern
-                            </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    <Experience experience={this.state.experience} />
                   </div>
                 </div>
               </div>
+               {/* Work Experience End*/}
             </div>
           </div>
         </section>
