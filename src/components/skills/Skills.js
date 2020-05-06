@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import SkillsItems from "./SkillItems";
 import KnowledgeItems from "./KnowledgeItems";
-import Skill from "./skills.json";
+import AccoladeItems from "./AccoladeItems";
+import MilestoneItems from "./MilestoneItems";
+import Skill from "./Skills.json";
 import Knowledge from "./Knowledge.json";
+import Accolades from "./Accolades.json";
+import Milestones from "./Milestones.json";
 
 export class Skills extends Component {
   state = {
     skills: Skill,
     knowledge: Knowledge,
+    accolades: Accolades,
+    milestones: Milestones,
   };
 
   render() {
@@ -71,48 +77,7 @@ export class Skills extends Component {
               <div className="row">
                 <div className="col-md-6 col-md-offset-3">
                   <div className="accolades">
-                    <div className="item">
-                      <i className="icon-Idea-2"></i>
-                      <div className="content">
-                        <h3>Erlang Language - 2010</h3>
-                        <p className="text-grey">
-                          A course completion certificate from Erlang Solutions
-                          on Erlang Language.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="item">
-                      <i className="icon-Twitter"></i>
-                      <div className="content">
-                        <h3>Six Sigma (Green Belt) - 2008</h3>
-                        <p className="text-grey">
-                          Received Green Belt in Six Sigma as part of my Masters
-                          Course.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="item">
-                      <i className="icon-Brush"></i>
-                      <div className="content">
-                        <h3>
-                          Post Graduation Diploma in Computer Applications
-                          (PGDCA) - 2001
-                        </h3>
-                        <p className="text-grey">
-                          Congratulated with distinction in MS-DOS, C language
-                          and MS Office 98 by National Computing Council, India.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="item">
-                      <i className="icon-Funky"></i>
-                      <div className="content">
-                        <h3>Locknil Computer Education - 1997</h3>
-                        <p className="text-grey">
-                          Certificate in Basic Computer Language (Elementary)
-                        </p>
-                      </div>
-                    </div>
+                    <AccoladeItems accolades={this.state.accolades} />
                   </div>
                   <div className="text-grey bookmark text-center">
                     <i className="icon-Bookmark"></i>
@@ -137,62 +102,7 @@ export class Skills extends Component {
               </div>
               <div className="milestones">
                 <div className="row">
-                  <div className="item col-md-3 col-sm-6">
-                    <div className="circle">
-                      <i className="icon-Coffee"></i>
-                    </div>
-                    <span
-                      className="number"
-                      data-from="10"
-                      data-refresh-interval="100"
-                      data-to="5012"
-                    >
-                      10
-                    </span>
-                    <h4>Cups of Coffee</h4>
-                  </div>
-                  <div className="item col-md-3 col-sm-6">
-                    <div className="circle">
-                      <i className="icon-Clock"></i>
-                    </div>
-                    <span
-                      className="number"
-                      data-from="10"
-                      data-refresh-interval="100"
-                      data-to="19432"
-                    >
-                      10
-                    </span>
-                    <h4>Hours Worked</h4>
-                  </div>
-                  <div className="item col-md-3 col-sm-6">
-                    <div className="circle">
-                      <i className="icon-Coding"></i>
-                    </div>
-                    <span
-                      className="number"
-                      data-from="10"
-                      data-refresh-interval="10"
-                      data-to="14"
-                    >
-                      10
-                    </span>
-                    <h4>Succesful Projects</h4>
-                  </div>
-                  <div className="item col-md-3 col-sm-6">
-                    <div className="circle">
-                      <i className="icon-Smile"></i>
-                    </div>
-                    <span
-                      className="number"
-                      data-from="10"
-                      data-refresh-interval="10"
-                      data-to="11"
-                    >
-                      5
-                    </span>
-                    <h4>Happy Clients</h4>
-                  </div>
+                  <MilestoneItems milestones={this.state.milestones} />
                 </div>
               </div>
             </div>

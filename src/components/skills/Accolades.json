@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "icon": "Funky",
+        "title":"Locknil Computer Education - 1997",
+        "body":"Certificate in Basic Computer Language (Elementary)"
+    },
+    {
+        "id":2,
+        "icon": "Brush",
+        "title":"Post Graduation Diploma in Computer Applications (PGDCA) - 2001",
+        "body":"Congratulated with distinction in MS-DOS, C language and MS Office 98 by National Computing Council, India."
+    },
+    {
+        "id":3,
+        "icon": "Twitter",
+        "title":"Six Sigma (Green Belt) - 2008",
+        "body":"Received Green Belt in Six Sigma as part of my Masters Course."
+    },
+    {
+        "id":4,
+        "icon": "Idea-2",
+        "title":"Erlang Language - 2010",
+        "body":"A course completion certificate from Erlang Solutions on Erlang Language."
+    }
+]

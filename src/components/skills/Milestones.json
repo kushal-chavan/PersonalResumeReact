@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "icon":"Coffee",
+        "count_from":"10",
+        "count_to":"5012",
+        "interval":"100",
+        "static_count":"10",
+        "title":"Cups of Coffee"
+    },
+    {
+        "id":1,
+        "icon":"Clock",
+        "count_from":"10",
+        "count_to":"19432",
+        "interval":"100",
+        "static_count":"10",
+        "title":"Hours Worked"
+    },
+    {
+        "id":1,
+        "icon":"Coding",
+        "count_from":"10",
+        "count_to":"14",
+        "interval":"10",
+        "static_count":"10",
+        "title":"Succesful Projects"
+    },
+    {
+        "id":1,
+        "icon":"Smile",
+        "count_from":"10",
+        "count_to":"11",
+        "interval":"10",
+        "static_count":"5",
+        "title":"Happy Clients"
+    }
+]
