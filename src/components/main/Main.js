@@ -7,8 +7,13 @@ import Clients from "../clients/Clients";
 import Skills from "../skills/Skills";
 import Contact from "../contact/Contact";
 import Footer from "../footer/Footer";
+import Titles from './title.json';
 
 export class Main extends Component {
+  state = {
+    title: Titles
+  }
+
   render() {
     return (
       <div>

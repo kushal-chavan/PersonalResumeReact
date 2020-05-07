@@ -1,0 +1,36 @@
+[
+    {
+        "header":{
+            "title":"Hello, I'm Rakesh Chouhan",
+            "tagline":"Sr. Software/IT Consultant"
+        },
+        "profile":{
+            "title":"HELLO, MY NAME IS CHOUHAN.",
+            "tagline":"Rakesh Chouhan, 33 years old, born and grew up in Hyderabad, India. Currently working in Charlotte, NC. Highly motivated, a solution driven developer."
+        },
+        "qualities": {
+            "title":"Qualities I carry...",
+            "tagline":"I love what I do. I take great pride in what I do. And I can't do something halfway, three-quarters, nine-tenths. If I'm going to do something, I go all the way."
+        },
+        "resume": {
+            "title":"My Resume",
+            "tagline":"If you call failures experiments, you can put them in your resume and claim them as achievements."
+        },
+        "clients": {
+            "title":"Projects & Clients",
+            "tagline":"The best preparation for good work tomorrow is to do good work today. - Elbert Hubbard"
+        },
+        "skills": {
+            "title":"Skills & Expertise",
+            "tagline":"A winner is someone who recognizes his God-given talents, works his tail off to develop them into skills, and uses these skills to accomplish his goals."
+        },
+        "knowledge": {
+            "title":"Knowledge",
+            "tagline":"Knowledge comes from learning. Wisdom comes from living and Wisdom begins with Wonder."
+        },
+        "milestones": {
+            "title":"Milestones Achieved",
+            "tagline":"I put my heart and my soul into my work, and have lost my mind in the process - Vincent Van Gogh"
+        }
+    }
+]

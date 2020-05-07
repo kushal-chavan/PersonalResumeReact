@@ -9,7 +9,7 @@
         "title":"Cups of Coffee"
     },
     {
-        "id":1,
+        "id":2,
         "icon":"Clock",
         "count_from":"10",
         "count_to":"19432",
@@ -18,7 +18,7 @@
         "title":"Hours Worked"
     },
     {
-        "id":1,
+        "id":3,
         "icon":"Coding",
         "count_from":"10",
         "count_to":"14",
@@ -27,7 +27,7 @@
         "title":"Succesful Projects"
     },
     {
-        "id":1,
+        "id":4,
         "icon":"Smile",
         "count_from":"10",
         "count_to":"11",

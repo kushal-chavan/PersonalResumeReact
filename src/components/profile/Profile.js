@@ -1,6 +1,10 @@
 import React, { Component } from "react";
+import myProfile from "./Profile.json";
 
 export class Profile extends Component {
+state = {
+  profile: myProfile,
+}
   render() {
     return (
       <React.Fragment>
@@ -21,27 +25,8 @@ export class Profile extends Component {
                           Highly motivated, a solution driven developer.
                         </p>
                         <span className="divider"></span>
-                        <p className="text-grey">
-                          I currently work for N2 Services Inc., as a consultant
-                          for different clients and projects where I spend most
-                          of my time developing and working on awesome projects.
-                        </p>
-                        <p className="text-grey">
-                          I am a team player, a self-motivator possessing
-                          excellent analytical, communication, problem solving,
-                          decision-making and organizational skills. I love to
-                          be in a challenging position in the diverse field of
-                          design, development and verification software and as
-                          well as hardware technologies. I am passionate and
-                          enthusiastic in learning and adopting new
-                          technologies.
-                        </p>
-                        <p className="text-grey">
-                          My ultimate objective is to make myself stand in
-                          parallel with the latest research and developments,
-                          and at the same time benefiting the company for which
-                          I work.
-                        </p>
+                        
+                          {this.state.profile.map(s => ( <p key={s.id} className="text-grey" dangerouslySetInnerHTML={ {__html: s.body} }></p>))}
                       </div>
                     </div>
                   </div>
@@ -49,13 +34,7 @@ export class Profile extends Component {
                     <div className="row">
                       <div className="col-sm-6 col-md-5">
                         <h4>Contact Details</h4>
-                        <ul className="text-grey list-unstyled">
-                          <li>Rakesh Chouhan</li>
-                          <li>Charlotte, NC</li>
-                          <li>+1(337)-853-1497</li>
-                          <li>me@rakeshchouhan.com</li>
-                          <li>www.rakeshchouhan.com</li>
-                        </ul>
+                        {this.state.profile.map(s => ( <ul key={s.id} className="text-grey list-unstyled" dangerouslySetInnerHTML={ {__html: s.contact} }></ul>))}
                       </div>
                     </div>
                   </div>
