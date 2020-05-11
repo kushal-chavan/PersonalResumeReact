@@ -25,11 +25,9 @@ export class Skills extends Component {
             <div className="section-content">
               <div className="row">
                 <div className="text-center col-md-8 col-md-offset-2">
-                  <h2 className="section-title">Skills & Expertise</h2>
+                  <h2 className="section-title">{this.props.title.title}</h2>
                   <p className="section-subtitle">
-                    A winner is someone who recognizes his God-given talents,
-                    works his tail off to develop them into skills, and uses
-                    these skills to accomplish his goals.
+                  {this.props.title.tagline}
                   </p>
                   <span className="divider center"></span>
                 </div>
@@ -47,10 +45,9 @@ export class Skills extends Component {
             <div className="section-content">
               <div className="row">
                 <div className="text-center col-md-8 col-md-offset-2">
-                  <h2 className="section-title">Knowledge</h2>
+                  <h2 className="section-title">{this.props.title.knowledge.title}</h2>
                   <p className="section-subtitle">
-                    Knowledge comes from learning. Wisdom comes from living and
-                    Wisdom begins with Wonder.
+                  {this.props.title.knowledge.tagline}
                   </p>
                   <span className="divider center"></span>
                 </div>
@@ -67,10 +64,9 @@ export class Skills extends Component {
             <div className="section-content">
               <div className="row">
                 <div className="text-center col-md-8 col-md-offset-2">
-                  <h2 className="section-title">Accolades</h2>
+                  <h2 className="section-title">{this.props.title.accolades.title}</h2>
                   <p className="section-subtitle">
-                    The accolades, just like the scrapes and bruises, fade in
-                    the end, and all you're left with is your ambition.
+                  {this.props.title.accolades.tagline}
                   </p>
                   <span className="divider center"></span>
                 </div>
@@ -93,10 +89,9 @@ export class Skills extends Component {
             <div className="section-content">
               <div className="row">
                 <div className="text-center col-md-8 col-md-offset-2">
-                  <h2 className="section-title">Milestones Achieved</h2>
+                  <h2 className="section-title"> {this.props.title.milestones.title}</h2>
                   <p className="section-subtitle">
-                    My path has not been determined. I shall have more
-                    experiences and pass many more milestones.
+                  {this.props.title.milestones.tagline}
                   </p>
                   <span className="divider center"></span>
                 </div>

@@ -16,11 +16,9 @@ export class Qualities extends Component {
             <div className="section-content">
               <div className="row">
                 <div className="text-center col-md-8 col-md-offset-2">
-                  <h2 className="section-title">Qualities I carry...</h2>
+                  <h2 className="section-title">{this.props.title.title}</h2>
                   <p className="section-subtitle">
-                    I love what I do. I take great pride in what I do. And I
-                    can't do something halfway, three-quarters, nine-tenths. If
-                    I'm going to do something, I go all the way.
+                  {this.props.title.tagline}
                   </p>
                   <span className="divider center"></span>
                 </div>

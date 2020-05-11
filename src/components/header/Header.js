@@ -1,12 +1,29 @@
 import React, { Component } from "react";
 import Sliders from "./Slider.json";
+import Proverbs from './InspirationalProverbs.json';
 import "./Header.css";
 
 export class Header extends Component {
-  state = {
-    sliders: Sliders,
-  };
+   constructor() {
+    super();
+    this.state = {
+      sliders: Sliders,
+      proverbs: Proverbs.inspirationalProverbs,
+      start: 0,
+      end: 1,
+    };
+  }
+  componentDidMount() {
+    this.interval = setInterval(() => this.setState({
+      start: this.state.start + 1,
+      end: this.state.end + 1
+    }), 5000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
   render() {
+    
     return (
       <React.Fragment>
         <header className="hero owl-bg-carousel-yes" id="home">
@@ -23,14 +40,18 @@ export class Header extends Component {
           <div className="hero-body top-slider">
             <div className="text-center hero-text">
               <h1>
-                Hello, I'm Rakesh Chouhan <span className="blinker"></span>
+                {this.props.title.title} <span className="blinker"></span>
               </h1>
               <br />
-              <h1 className="small">Sr. Software/IT Consultant</h1>
+              <h1 className="small">{this.props.title.tagline}</h1>
               <br />
               <br />
               <span className="divider center" style={{ Width: 215 }}></span>
-              <p id="fadingProverbs">Wisdom begins with Wonder - Socrates</p>
+              {/* <p id="fadingProverbs">Wisdom begins with Wonder - Socrates</p> */}
+              {this.state.proverbs.slice(this.state.start, this.state.end).map((proverb, index) => {
+                
+                return(<p key={index}>{proverb}</p>);
+              })}
               <div className="page-scroll">
                 <a href="#profile" className="btn btn-custom btn-lg">
                   Know Me Better

@@ -18,12 +18,10 @@ state = {
                     <div className="row">
                       <div className="col-md-12">
                         <h2 className="section-title">
-                          Hello, My Name is Chouhan.
+                        {this.props.title.title}
                         </h2>
                         <p>
-                          Rakesh Chouhan, 33 years old, born and grew up in
-                          Hyderabad, India. Currently working in Charlotte, NC.
-                          Highly motivated, a solution driven developer.
+                        {this.props.title.tagline}
                         </p>
                         <span className="divider"></span>
                         

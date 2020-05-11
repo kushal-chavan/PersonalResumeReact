@@ -19,10 +19,9 @@ export class Resume extends Component {
             <div className="section-content">
               <div className="row">
                 <div className="text-center col-md-8 col-md-offset-2">
-                  <h2 className="section-title">My Resume</h2>
+                  <h2 className="section-title">{this.props.title.title}</h2>
                   <p className="section-subtitle">
-                    If you call failures experiments, you can put them in your
-                    resume and claim them as achievements.
+                  {this.props.title.tagline}
                   </p>
                   <span className="divider center"></span>
                 </div>

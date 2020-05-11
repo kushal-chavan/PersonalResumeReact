@@ -16,15 +16,16 @@ export class Main extends Component {
   }
 
   render() {
+  
     return (
       <div>
-        <Header />
-        <Profile />
-        <Qualities />
-        <Resume />
-        <Clients />
-        <Skills />
-        <Contact />
+        <Header title={this.state.title.header} />
+        <Profile title={this.state.title.profile}/>
+        <Qualities title={this.state.title.qualities}/>
+        <Resume title={this.state.title.resume}/>
+        <Clients title={this.state.title.clients}/>
+        <Skills title={this.state.title.skills}/>
+        <Contact/>
         <Footer />
       </div>
     );

@@ -521,6 +521,12 @@ span.divider.center {
   height: 904px;
 }
 
+@media (max-width: 796px) {
+  .top-slider{
+    height: 806px;
+  }
+}
+
 body {
   display: none;
 }

@@ -16,10 +16,9 @@ export class Clients extends Component {
             <div className="section-content">
               <div className="row">
                 <div className="text-center col-md-12">
-                  <h2 className="section-title">Projects & Clients</h2>
+                  <h2 className="section-title">{this.props.title.title}</h2>
                   <p className="section-subtitle">
-                    The best preparation for good work tomorrow is to do good
-                    work today. - Elbert Hubbard
+                  {this.props.title.tagline}
                   </p>
                   <span className="divider center"></span>
                 </div>
