@@ -1,17 +1,24 @@
 import React, { Component } from "react";
-
+import Sliders from "./Slider.json";
+import "./Header.css";
 
 export class Header extends Component {
+  state = {
+    sliders: Sliders,
+  };
   render() {
     return (
       <React.Fragment>
         <header className="hero owl-bg-carousel-yes" id="home">
           <div className="owl-bg-carousel owl-carousel">
-            <div className="item full-screen owl-bg-image slider1"></div>
-            <div className="item full-screen owl-bg-image slider2"></div>
-            <div className="item full-screen owl-bg-image slider3"></div>
-            <div className="item full-screen owl-bg-image slider4"></div>
-            <div className="item full-screen owl-bg-image slider5"></div>
+            {this.state.sliders.map((slider) => {
+              return (
+                <div key={slider.id}
+                  className="item full-screen owl-bg-image"
+                  style={{ backgroundImage: "url(" + slider.image + ")" }}
+                ></div>
+              );
+            })}
           </div>
           <div className="hero-body top-slider">
             <div className="text-center hero-text">
@@ -88,7 +95,6 @@ export class Header extends Component {
           </div>
         </nav>
       </React.Fragment>
-      
     );
   }
 }

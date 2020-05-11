@@ -7,6 +7,7 @@ import Skill from "./Skills.json";
 import Knowledge from "./Knowledge.json";
 import Accolades from "./Accolades.json";
 import Milestones from "./Milestones.json";
+import './Skills.css';
 
 export class Skills extends Component {
   state = {

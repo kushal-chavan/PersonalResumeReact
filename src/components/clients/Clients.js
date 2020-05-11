@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Client from "./ClientItems";
 import clients from "./clients.json";
+import './Clients.css' 
 import ClientsImage from "./ClientsImage";
 
 export class Clients extends Component {

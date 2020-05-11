@@ -8,6 +8,7 @@ import Skills from "../skills/Skills";
 import Contact from "../contact/Contact";
 import Footer from "../footer/Footer";
 import Titles from './title.json';
+import './Main.css';
 
 export class Main extends Component {
   state = {

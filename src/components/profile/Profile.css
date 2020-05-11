@@ -1,0 +1,133 @@
+#profile {
+  background-color: #0d0c0d;
+}
+#profile .profile-text {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  #profile .profile-text {
+    text-align: justify;
+  }
+}
+#profile .profile-text h2 {
+  text-transform: uppercase;
+}
+#profile .contact-details {
+  margin-top: 30px;
+}
+@media (max-width: 767px) {
+  #profile .profile-text .divider {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  #profile .contact-details {
+    text-align: center;
+  }
+}
+@media (min-width: 992px) {
+  #profile .profile-text {
+    padding-top: 100px;
+  }
+  #profile .profile-text.padding-right-yes {
+    padding-right: 20px;
+  }
+  #profile .profile-text.padding-left-yes {
+    padding-left: 20px;
+  }
+  #profile .contact-details {
+    padding-bottom: 100px;
+  }
+}
+#profile .contact-details h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  #profile .contact-details h4 {
+    font-size: 22px;
+  }
+}
+#profile .contact-details ul.list-unstyled > li {
+  padding: 2px 0;
+  font-size: 16px;
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  #profile .contact-details ul.list-unstyled > li {
+    padding: 5px 0;
+    font-size: 20px;
+  }
+}
+#profile .contact-details a.btn-custom {
+  margin-top: 20px;
+}
+@media (min-width: 768px) {
+  #profile .contact-details a.btn-custom {
+    margin-top: 50px;
+  }
+}
+@media (min-width: 992px) {
+  #profile .contact-details.padding-right-yes {
+    padding-right: 20px;
+  }
+  #profile .contact-details.padding-left-yes {
+    padding-left: 20px;
+  }
+}
+#profile .pp-wrapper {
+  position: relative;
+}
+#profile .pp-wrapper .profile-picture h4 {
+  text-transform: uppercase;
+}
+#profile .pp-wrapper .profile-picture.style-one {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+#profile .pp-wrapper .profile-picture.style-two img {
+  margin-top: 100px;
+}
+#profile .pp-wrapper .profile-picture.style-two .title {
+  display: block;
+  width: 100%;
+  height: 55px;
+  line-height: 55px;
+  background-color: #2e2e2e;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 2px;
+}
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 500px;
+    color: #004a70;
+  }
+  .bootstrap-dialog.type-primary .modal-header {
+    background-color: #004a70 !important;
+  }
+  .iAmAmazing,
+  .iAmTitle {
+    text-align: center;
+  }
+  .iAmAmazing {
+    width: 58%;
+    font-size: 20px;
+    background: -webkit-linear-gradient(
+      aliceblue,
+      orange,
+      bisque,
+      #d3d3d3,
+      #add8e6,
+      #4682b4,
+      violet
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 34px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

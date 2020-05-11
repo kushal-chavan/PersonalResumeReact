@@ -3,6 +3,7 @@ import WorkExperience from "./WorkExperience.json";
 import Education from "./Education.json";
 import Experience from "./ExperienceItems";
 import EducationItems from "./EducationItems";
+import './Resume.css';
 
 export class Resume extends Component {
   state = {

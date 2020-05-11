@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import QualityItems from "./QualityItems";
 import Data from "./qualities.json";
+import './Qualities.css';
 
 export class Qualities extends Component {
   state = {

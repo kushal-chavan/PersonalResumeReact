@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import myProfile from "./Profile.json";
+import './Profile.css';
 
 export class Profile extends Component {
 state = {
