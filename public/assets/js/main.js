@@ -5,19 +5,7 @@ $(function () {
   }
   $(document).ready(function () {
     $.fn.jpreLoader &&
-      $("body").jpreLoader({ showPercentage: !1, loaderVPos: "50%" }),
-      f()
-        .done(function (a, b, f) {
-          (c = a),
-            $.each(c.inspirationalProverbs, function (a, b) {
-              e[d++] = b;
-            }),
-            g();
-        })
-        .fail(function (a, b, c) {
-          console.log("Error loading Proverb Data (json data) " + c);
-        }),
-      $(".contact-form").css("display", "none");
+      $("body").jpreLoader({ showPercentage: !1, loaderVPos: "50%" });
   });
   var c,
     a = function (a) {
@@ -36,28 +24,8 @@ $(function () {
       $("#resultLoading .bg").height("100%"),
         $("#resultLoading").fadeOut(300),
         $("body").css("cursor", "default");
-    },
-    d = 0,
-    e = [],
-    f = function () {
-      return $.ajax({
-        type: "GET",
-        url: "assets/data/InspirationalProverbs.json",
-        async: !0,
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-      });
-    },
-    g = function () {
-      d >= e.length && (d = 0),
-        $("#fadingProverbs").html(e[d++]),
-        $("#fadingProverbs")
-          .fadeIn("slow")
-          .animate({ opacity: 1 }, 8e3)
-          .fadeOut("slow", function () {
-            return g();
-          });
     };
+    
   $(window).smartload(function () {
     $.fn.matchHeight && $(".match-height").matchHeight();
   }),

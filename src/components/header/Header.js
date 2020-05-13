@@ -8,16 +8,23 @@ export class Header extends Component {
     super();
     this.state = {
       sliders: Sliders,
-      proverbs: Proverbs.inspirationalProverbs,
+      proverbs: Proverbs[0].inspirationalProverbs,
       start: 0,
       end: 1,
+      trans:'animated fadeIn',
     };
   }
   componentDidMount() {
     this.interval = setInterval(() => this.setState({
       start: this.state.start + 1,
-      end: this.state.end + 1
-    }), 5000);
+      end: this.state.end + 1,
+    }), 6000);
+    this.interval = setInterval(() => this.setState({
+      trans: 'animated fadeOut'
+    }), 5900);
+    this.interval = setInterval(() => this.setState({
+      trans: 'animated fadeIn'
+    }), 6000);
   }
   componentWillUnmount() {
     clearInterval(this.interval);
@@ -47,10 +54,9 @@ export class Header extends Component {
               <br />
               <br />
               <span className="divider center" style={{ Width: 215 }}></span>
-              {/* <p id="fadingProverbs">Wisdom begins with Wonder - Socrates</p> */}
               {this.state.proverbs.slice(this.state.start, this.state.end).map((proverb, index) => {
                 
-                return(<p key={index}>{proverb}</p>);
+                return(<p key={index} className={this.state.trans}>{proverb}</p>);
               })}
               <div className="page-scroll">
                 <a href="#profile" className="btn btn-custom btn-lg">
