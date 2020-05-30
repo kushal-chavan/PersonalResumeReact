@@ -1,11 +1,22 @@
 import React, { Component } from "react";
-import myProfile from "./Profile.json";
-import './Profile.css';
+// import myProfile from "./Profile.json";
+import "./Profile.css";
+import axios from "axios";
+import shortid from "shortid";
 
 export class Profile extends Component {
-state = {
-  profile: myProfile,
-}
+  state = {
+    profile: [],
+  };
+  componentDidMount() {
+    axios.get(`https://rakeshchouhan.herokuapp.com/api/profile`).then((res) => {
+      this.setState({ profile:res.data });
+    });
+  }
+  getRandomKey = () => {
+    return shortid.generate();
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -18,14 +29,15 @@ state = {
                     <div className="row">
                       <div className="col-md-12">
                         <h2 className="section-title">
-                        {this.props.title.title}
+                          {this.props.title.title}
                         </h2>
-                        <p>
-                        {this.props.title.tagline}
-                        </p>
+                        <p>{this.props.title.tagline}</p>
                         <span className="divider"></span>
-                        
-                          {this.state.profile.map(s => ( <p key={s.id} className="text-grey" dangerouslySetInnerHTML={ {__html: s.body} }></p>))}
+                          <p
+                            key={this.getRandomKey}
+                            className="text-grey"
+                            dangerouslySetInnerHTML={{ __html: this.state.profile.map(data => data.body)}}
+                          ></p>
                       </div>
                     </div>
                   </div>
@@ -33,7 +45,13 @@ state = {
                     <div className="row">
                       <div className="col-sm-6 col-md-5">
                         <h4>Contact Details</h4>
-                        {this.state.profile.map(s => ( <ul key={s.id} className="text-grey list-unstyled" dangerouslySetInnerHTML={ {__html: s.contact} }></ul>))}
+                        {this.state.profile.map((s) => (
+                          <ul
+                            key={s.id}
+                            className="text-grey list-unstyled"
+                            dangerouslySetInnerHTML={{ __html: s.contact }}
+                          ></ul>
+                        ))}
                       </div>
                     </div>
                   </div>

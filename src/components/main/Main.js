@@ -10,6 +10,7 @@ import Footer from "../footer/Footer";
 import Titles from './title.json';
 import './Main.css';
 
+
 export class Main extends Component {
   state = {
     title: Titles

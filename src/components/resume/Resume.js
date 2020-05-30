@@ -1,15 +1,22 @@
 import React, { Component } from "react";
-import WorkExperience from "./WorkExperience.json";
-import Education from "./Education.json";
 import Experience from "./ExperienceItems";
 import EducationItems from "./EducationItems";
 import './Resume.css';
+import axios from 'axios';
 
 export class Resume extends Component {
   state = {
-    experience: WorkExperience,
-    educations: Education,
+    experience: [],
+    educations: [],
   };
+  componentDidMount() {
+    axios.get(`https://rakeshchouhan.herokuapp.com/api/education`).then((res) => {
+      this.setState({ educations:res.data });
+    });
+    axios.get(`https://rakeshchouhan.herokuapp.com/api/work`).then((res) => {
+      this.setState({ experience:res.data });
+    });
+  }
 
   render() {
     return (

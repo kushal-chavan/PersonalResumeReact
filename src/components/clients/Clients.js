@@ -1,13 +1,19 @@
 import React, { Component } from "react";
 import Client from "./ClientItems";
-import clients from "./clients.json";
 import './Clients.css' 
 import ClientsImage from "./ClientsImage";
+import axios from 'axios';
 
 export class Clients extends Component {
   state = {
-    clients: clients,
+    clients: [],
   };
+  componentDidMount() {
+    axios.get(`https://rakeshchouhan.herokuapp.com/api/clients`)
+      .then(res => {
+        this.setState({ clients:res.data });
+      })
+  }
   render() {
     return (
       <React.Fragment>

@@ -1,45 +1,62 @@
 import React, { Component } from "react";
-import Sliders from "./Slider.json";
-import Proverbs from './InspirationalProverbs.json';
 import "./Header.css";
+import axios from "axios";
 
 export class Header extends Component {
-   constructor() {
+  constructor() {
     super();
     this.state = {
-      sliders: Sliders,
-      proverbs: Proverbs[0].inspirationalProverbs,
+      sliders: [],
+      proverbs: [],
       start: 0,
       end: 1,
-      trans:'animated fadeIn',
+      trans: "animated fadeIn",
     };
   }
   componentDidMount() {
-    this.interval = setInterval(() => this.setState({
-      start: this.state.start + 1,
-      end: this.state.end + 1,
-    }), 6000);
-    this.interval = setInterval(() => this.setState({
-      trans: 'animated fadeOut'
-    }), 5900);
-    this.interval = setInterval(() => this.setState({
-      trans: 'animated fadeIn'
-    }), 6000);
+    axios.get(`https://rakeshchouhan.herokuapp.com/api/proverbs`).then((res) => {
+      this.setState({ proverbs: res.data[0].inspirationalProverbs });
+    });
+    axios.get(`https://rakeshchouhan.herokuapp.com/api/slider`).then((res) => {
+      this.setState({ sliders:res.data });
+    });
+    this.interval = setInterval(
+      () =>
+        this.setState({
+          start: this.state.start + 1,
+          end: this.state.end + 1,
+        }),
+      7000
+    );
+    this.interval = setInterval(
+      () =>
+        this.setState({
+          trans: "animated fadeOut",
+        }),
+      6900
+    );
+    this.interval = setInterval(
+      () =>
+        this.setState({
+          trans: "animated fadeIn",
+        }),
+      7000
+    );
   }
   componentWillUnmount() {
     clearInterval(this.interval);
   }
   render() {
-    
     return (
       <React.Fragment>
         <header className="hero owl-bg-carousel-yes" id="home">
           <div className="owl-bg-carousel owl-carousel">
             {this.state.sliders.map((slider) => {
               return (
-                <div key={slider.id}
+                <div
+                  key={slider.id}
                   className="item full-screen owl-bg-image"
-                  style={{ backgroundImage: "url(" + slider.image + ")" }}
+                  style={{ backgroundImage: 'url(' + slider.image + ')' }}
                 ></div>
               );
             })}
@@ -54,10 +71,15 @@ export class Header extends Component {
               <br />
               <br />
               <span className="divider center" style={{ Width: 215 }}></span>
-              {this.state.proverbs.slice(this.state.start, this.state.end).map((proverb, index) => {
-                
-                return(<p key={index} className={this.state.trans}>{proverb}</p>);
-              })}
+              {this.state.proverbs
+                .slice(this.state.start, this.state.end)
+                .map((proverb, index) => {
+                  return (
+                    <p key={index} className={this.state.trans}>
+                      {proverb}
+                    </p>
+                  );
+                })}
               <div className="page-scroll">
                 <a href="#profile" className="btn btn-custom btn-lg">
                   Know Me Better

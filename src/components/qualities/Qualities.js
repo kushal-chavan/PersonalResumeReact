@@ -1,12 +1,24 @@
 import React, { Component } from "react";
 import QualityItems from "./QualityItems";
-import Data from "./qualities.json";
+//  import Data from "./qualities.json";
 import './Qualities.css';
+import axios from "axios";
+import shortid from "shortid";
+
 
 export class Qualities extends Component {
   state = {
-    quality: Data,
+    quality: [],
   };
+
+  componentDidMount() {
+    axios.get(`https://rakeshchouhan.herokuapp.com/api/qualities`).then((res) => {
+      this.setState({ quality:res.data });
+    });
+  }
+  getRandomKey = () => {
+    return shortid.generate();
+  }
 
   render() {
     return (

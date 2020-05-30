@@ -3,20 +3,31 @@ import SkillsItems from "./SkillItems";
 import KnowledgeItems from "./KnowledgeItems";
 import AccoladeItems from "./AccoladeItems";
 import MilestoneItems from "./MilestoneItems";
-import Skill from "./Skills.json";
-import Knowledge from "./Knowledge.json";
-import Accolades from "./Accolades.json";
-import Milestones from "./Milestones.json";
 import './Skills.css';
+import axios from 'axios';
 
 export class Skills extends Component {
   state = {
-    skills: Skill,
-    knowledge: Knowledge,
-    accolades: Accolades,
-    milestones: Milestones,
+    skills1: [],
+    skills2: [],
+    skills3: [],
+    knowledge: [],
+    accolades: [],
+    milestones: [],
   };
-
+  componentDidMount() {
+    axios.get(`https://rakeshchouhan.herokuapp.com/api/knowledge`).then((res) => {
+      this.setState({ knowledge:res.data });
+    });
+    axios.get(`https://rakeshchouhan.herokuapp.com/api/accolades`).then((res) => {
+      this.setState({ accolades:res.data });
+    });
+    axios.get(`https://rakeshchouhan.herokuapp.com/api/skills`).then((res) => {
+      this.setState({ skills1:res.data.slice(0, 6) });
+      this.setState({ skills2:res.data.slice(6, 12) });
+      this.setState({ skills3:res.data.slice(12, 18) });
+    });
+  }
   render() {
     return (
       <React.Fragment>
@@ -34,7 +45,13 @@ export class Skills extends Component {
               </div>
               <div className="circle-chart">
                 <div className="row">
-                  <SkillsItems skills={this.state.skills} />
+                  <SkillsItems skills={this.state.skills1} />
+                </div>
+                <div className="row">
+                  <SkillsItems skills={this.state.skills2} />
+                </div>
+                <div className="row">
+                  <SkillsItems skills={this.state.skills3} />
                 </div>
               </div>
             </div>

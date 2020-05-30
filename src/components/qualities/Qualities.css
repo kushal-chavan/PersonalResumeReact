@@ -1,6 +1,7 @@
 #qualities {
   background-color: #0d0c0d;
 }
+
 @media (min-width: 1501px) {
   .col-md-8 .col-md-offset-2 .text-center,
   .myStrengthsTitle {
