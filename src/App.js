@@ -15,12 +15,10 @@ export class App extends Component {
   render() {
     return (
       <Router>
-        <div>
           <Switch>
             <Route path="/blog" component={Blog} />
             <Route path="*" exact={true} component={Main} />
           </Switch>
-        </div>
       </Router>
     );
   }

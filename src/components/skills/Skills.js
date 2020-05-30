@@ -3,7 +3,7 @@ import SkillsItems from "./SkillItems";
 import KnowledgeItems from "./KnowledgeItems";
 import AccoladeItems from "./AccoladeItems";
 import MilestoneItems from "./MilestoneItems";
-import Skill from "./Skills.json";
+import Skill from "./skills.json";
 import Knowledge from "./Knowledge.json";
 import Accolades from "./Accolades.json";
 import Milestones from "./Milestones.json";
