@@ -46,7 +46,7 @@ $(function () {
         setTimeout(function () {
           $("#contact-form button").html(buttonCopy);
           $(".contact-details").toggle();
-          $(".contact-form").css("display", "none");
+          $("#contact-form").css("display", "none");
         }, 1000);
       },
       error: function (xhr, err) {

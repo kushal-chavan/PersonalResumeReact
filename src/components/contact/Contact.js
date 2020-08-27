@@ -1,7 +1,14 @@
 import React, { Component } from "react";
 import './Contact.css';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export class Contact extends Component {
+  
+  state = {
+    contactForm: 'none',
+    hide: '',
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -17,7 +24,8 @@ export class Contact extends Component {
                   <span className="divider center"></span>
                 </div>
               </div>
-              <div className="row">
+              <ScrollAnimation offset={10} animateIn='flipInX' animateOnce={true}>
+              <div style={{display:this.state.hide}} className="row" onClick={() => {this.setState({contactForm:'unset', hide:'none'})}}>
                 <div className="col-md-12">
                   <div className="text-center contact-details">
                     <div className="speech-bubble">
@@ -38,13 +46,15 @@ export class Contact extends Component {
                   </div>
                 </div>
               </div>
+              </ScrollAnimation>
               <div className="row" id="contactFormRow">
                 <div className="col-md-8 col-md-offset-2">
                   <form
+                    style={{display:this.state.contactForm}}
                     action="https://rakeshchouhan.com/services/contact/sendEmail.php"
                     className="contact-form element-line validate"
                     id="contact-form"
-                    method="post"
+                    method="POST"
                     name="contact-form"
                     noValidate
                   >

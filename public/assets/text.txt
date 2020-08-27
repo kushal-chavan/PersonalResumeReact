@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel=stylesheet>
     <link href=%PUBLIC_URL%/assets/plugins/icons-mind/style.css rel=stylesheet>
     <link href=%PUBLIC_URL%/assets/plugins/flexSlider/flexslider.css rel=stylesheet>
+    <!-- <link href=%PUBLIC_URL%/assets/plugins/owl-carousel/owl.carousel.css rel=stylesheet>
+    <link href=%PUBLIC_URL%/assets/plugins/owl-carousel/owl.theme.css rel=stylesheet> -->
 </head>
 <style>
     #root {
@@ -22,11 +24,26 @@
 <body id="page-top" style="display: block;">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnwHRpPZJeVHZbrLhyMqP6XTG3S00xNqw"></script> -->
+    <!-- <script src=%PUBLIC_URL%/assets/plugins/owl-carousel/owl.carousel.min.js></script> -->
+    <!-- <script src=%PUBLIC_URL%/assets/plugins/matchHeight/jquery.matchHeight-min.js></script> -->
+    <!-- <script src=%PUBLIC_URL%/assets/plugins/bootstrap/js/bootstrap-dialog.min.js></script> -->
+    <!-- <script src=%PUBLIC_URL%/assets/js/animation.js></script> -->
+    <!-- <script src=%PUBLIC_URL%/assets/js/bg-carousel.js></script> -->
+    <!-- <script src=%PUBLIC_URL%/assets/js/map.js ></script> -->
+        <!-- <script src=%PUBLIC_URL%/assets/plugins/easing/jquery.easing.min.js></script> -->
+    <!-- <script src=%PUBLIC_URL%/assets/plugins/sticky/jquery.sticky.js></script> -->
+
     <script src=%PUBLIC_URL%/assets/plugins/jquery.min.js></script>
+    <!-- <script src=%PUBLIC_URL%/assets/plugins/jpreloader/js/jpreloader.min.js></script> -->
     <script src=%PUBLIC_URL%/assets/plugins/validation/jquery.validate.min.js></script>
+    <script src=%PUBLIC_URL%/assets/plugins/detectmobilebrowser/detectmobilebrowser.js></script>
     <script src=%PUBLIC_URL%/assets/plugins/inview/jquery.inview.min.js></script>
+    <script src=%PUBLIC_URL%/assets/plugins/flexSlider/jquery.flexslider-min.js></script>
     <script src=%PUBLIC_URL%/assets/plugins/countTo/jquery.countTo.js></script>
-    <script src=%PUBLIC_URL%/assets/js/contact.js></script>
+    <script src=%PUBLIC_URL%/assets/plugins/debouncer/debouncer.js></script>
     <script src=%PUBLIC_URL%/assets/js/main.js></script>
+    <script src=%PUBLIC_URL%/assets/js/contact.js></script>
+
 </body>
 </html>

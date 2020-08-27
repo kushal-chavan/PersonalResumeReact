@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "./Header.css";
 import axios from "axios";
+import "animate.css";
+import { Link } from 'react-scroll';
+import Slider from './slider';
 
 export class Header extends Component {
   constructor() {
@@ -8,18 +11,38 @@ export class Header extends Component {
     this.state = {
       sliders: [],
       proverbs: [],
+      header: '',
       start: 0,
       end: 1,
       trans: "animated fadeIn",
     };
   }
-  componentDidMount() {
+
+  callAPI(){
     axios.get(`https://rakeshchouhan.herokuapp.com/api/proverbs`).then((res) => {
       this.setState({ proverbs: res.data[0].inspirationalProverbs });
     });
-    axios.get(`https://rakeshchouhan.herokuapp.com/api/slider`).then((res) => {
-      this.setState({ sliders:res.data });
-    });
+  }
+
+  handleScroll = () =>  {
+    const winScroll =
+    document.body.scrollTop || document.documentElement.scrollTop;
+    
+    const scrolled = winScroll;
+
+    if(scrolled >= 980 && window.innerWidth > 760){
+      this.setState({header:'fixed'})
+    } else if(window.innerWidth > 760) {
+      this.setState({header:'relative'})
+    } else {
+      this.setState({header:''})
+    }
+  }
+
+
+  componentDidMount() {  
+    window.addEventListener('scroll', this.handleScroll, true);
+    this.callAPI();
     this.interval = setInterval(
       () =>
         this.setState({
@@ -46,22 +69,13 @@ export class Header extends Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }
+
   render() {
     return (
       <React.Fragment>
-        <header className="hero owl-bg-carousel-yes" id="home">
-          <div className="owl-bg-carousel owl-carousel">
-            {this.state.sliders.map((slider) => {
-              return (
-                <div
-                  key={slider.id}
-                  className="item full-screen owl-bg-image"
-                  style={{ backgroundImage: 'url(' + slider.image + ')' }}
-                ></div>
-              );
-            })}
-          </div>
-          <div className="hero-body top-slider">
+        <header className="hero" id="home">
+            <Slider slider={this.props.slider}/>
+          <div className="hero-body"> 
             <div className="text-center hero-text">
               <h1>
                 {this.props.title.title} <span className="blinker"></span>
@@ -81,9 +95,9 @@ export class Header extends Component {
                   );
                 })}
               <div className="page-scroll">
-                <a href="#profile" className="btn btn-custom btn-lg">
+                <Link to="profile" smooth={true} duration={1500} className="btn btn-custom btn-lg">
                   Know Me Better
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -92,6 +106,7 @@ export class Header extends Component {
           className="center-menu navbar navbar-fixed-top"
           id="navigation"
           role="navigation"
+          style={{position:this.state.header}}
         >
           <div className="container navbar-container">
             <div className="page-scroll navbar-header">
@@ -114,27 +129,27 @@ export class Header extends Component {
               </a>
             </div>
             <div className="collapse Chouhan-collapse navbar-collapse">
-              <ul className="nav navbar-nav">
+              <ul id="link-navbar" className="nav navbar-nav">
                 <li className="page-scroll">
-                  <a href="#home">Home</a>
+                  <Link to="home" smooth={true} duration={1000} style={{cursor: 'pointer'}}>Home</Link>
                 </li>
                 <li className="page-scroll">
-                  <a href="#profile">I AM</a>
+                  <Link to="profile" smooth={true} duration={1000} style={{cursor: 'pointer'}}>I AM</Link>
                 </li>
                 <li className="page-scroll">
-                  <a href="#qualities">Qualities</a>
+                  <Link to="qualities" smooth={true} duration={1000} style={{cursor: 'pointer'}}>Qualities</Link>
                 </li>
                 <li className="page-scroll">
-                  <a href="#resume">Resume</a>
+                  <Link to="resume" smooth={true} duration={1000} style={{cursor: 'pointer'}}>Resume</Link>
                 </li>
                 <li className="page-scroll">
-                  <a href="#clients">Clients</a>
+                  <Link to="clients" smooth={true} duration={1000} style={{cursor: 'pointer'}}>Clients</Link>
                 </li>
                 <li className="page-scroll">
-                  <a href="#skills">Skills</a>
+                  <Link to="skills" smooth={true} duration={1000} style={{cursor: 'pointer'}}>Skills</Link>
                 </li>
                 <li className="page-scroll">
-                  <a href="#contact">Contact</a>
+                  <Link to="contact" smooth={true} duration={1000} style={{cursor: 'pointer'}}>Contact</Link>
                 </li>
                 <li>
                   <a href="/blog">Blog</a>

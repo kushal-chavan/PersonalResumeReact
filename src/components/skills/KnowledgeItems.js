@@ -9,10 +9,13 @@ const KnownledgeItems = (props) => {
             <div className="item">
               <h4>{item.title}</h4>
               <div className="bar">
-                <span className="percent">{item.percent}%</span>{" "}
+                <span className="percent"
+                // style={{left:item.percent * 5 +'px'}}
+                >{item.percent}%</span>{" "}
                 <span
                   className="item-progress"
                   data-percent={item.percent}
+                  // style={{width:item.percent * 5 +'px'}}
                 ></span>
               </div>
             </div>

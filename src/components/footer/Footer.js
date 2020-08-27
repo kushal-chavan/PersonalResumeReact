@@ -1,27 +1,23 @@
 import React, { Component } from "react";
 import './Footer.css';
+import { Link } from 'react-scroll';
+import GoogleMap from '../google-map/map';
 
 export class Footer extends Component {
+  
   render() {
     return (
       <React.Fragment>
-        <div id="map">
-          <div className="address">
-            <h4>Charlotte, NC</h4>
-          </div>
-          <div id="cd-google-map">
-            <div id="google-container"></div>
-          </div>
-        </div>
+        <GoogleMap />
         <footer className="footer">
           <div className="container">
             <div className="row">
               <div className="col-md-12">
                 <div className="page-scroll">
-                  <a href="#page-top">
+                  <Link to="page-top" smooth={true} duration={1500}>
                     <i className="icon-Arrow-Up"></i>
                     {null}
-                  </a>
+                  </Link>
                 </div>
                 <ul className="list-inline social-icons">
                   <li>

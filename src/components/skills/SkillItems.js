@@ -4,12 +4,14 @@ const SkillItems = (props) => {
   const items = props.skills.map((item) => {
     return (
       <React.Fragment key={item.id}>
+
         <div className="col-sm-4 col-md-2">
           <div className="item">
             <div className="circle">
               <span
                 className="item-progress"
                 data-percent={item.percent}
+                // style={{height: count+'px'}}
               ></span>
             </div>
             <span className="percent">{item.percent}%</span>

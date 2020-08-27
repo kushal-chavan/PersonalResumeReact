@@ -1,23 +1,22 @@
 import React, { Component } from "react";
 import QualityItems from "./QualityItems";
-//  import Data from "./qualities.json";
 import './Qualities.css';
 import axios from "axios";
-import shortid from "shortid";
-
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export class Qualities extends Component {
   state = {
     quality: [],
   };
 
-  componentDidMount() {
+  callAPI(){
     axios.get(`https://rakeshchouhan.herokuapp.com/api/qualities`).then((res) => {
       this.setState({ quality:res.data });
+       this.forceUpdate();
     });
   }
-  getRandomKey = () => {
-    return shortid.generate();
+  componentDidMount() {
+    this.callAPI();
   }
 
   render() {
@@ -29,6 +28,7 @@ export class Qualities extends Component {
               <div className="row">
                 <div className="text-center col-md-8 col-md-offset-2">
                   <h2 className="section-title">{this.props.title.title}</h2>
+                  {/* <button onClick={() => this.callAPI()}>Refresh</button> */}
                   <p className="section-subtitle">
                   {this.props.title.tagline}
                   </p>
@@ -64,22 +64,22 @@ export class Qualities extends Component {
                     <div className="row">
                       <div className="col-md-12 myStrengthsContent">
                         <div className="column-chart">
-                          <div className="hidden-xs legend legend-left">
+                        <ScrollAnimation offset={10} className="hidden-xs legend legend-left" animateIn='bounceInLeft' animateOnce={true}>
                             <h3 className="legend-title">ME</h3>
-                          </div>
+                          </ScrollAnimation>
                           <div className="hidden-xs legend legend-right">
-                            <div className="item">
+                            <ScrollAnimation offset={10} className="item" animateIn='bounceInUp' animateOnce={true}>
                               <h4>Superhero</h4>
-                            </div>
-                            <div className="item">
+                            </ScrollAnimation>
+                            <ScrollAnimation offset={10} className="item" animateIn='bounceInUp' animateOnce={true}>
                               <h4>Preety Good</h4>
-                            </div>
-                            <div className="item">
+                            </ScrollAnimation>
+                            <ScrollAnimation offset={10} className="item" animateIn='bounceInUp' animateOnce={true}>
                               <h4>Good</h4>
-                            </div>
-                            <div className="item">
+                            </ScrollAnimation>
+                            <ScrollAnimation offset={10} className="item" animateIn='bounceInUp' animateOnce={true}>
                               <h4>Newbie</h4>
-                            </div>
+                            </ScrollAnimation>
                           </div>
                           <div className="chart clearfix">
                             <div className="item">
@@ -87,7 +87,7 @@ export class Qualities extends Component {
                                 <span className="percent">82%</span>
                                 <div
                                   className="item-progress"
-                                  style={{ Height: 294 }}
+                                  style={{ height: 294 }}
                                   data-percent="82"
                                 >
                                   <span className="title">Innovation</span>
@@ -99,7 +99,7 @@ export class Qualities extends Component {
                                 <span className="percent">71%</span>
                                 <div
                                   className="item-progress"
-                                  style={{ Height: 227 }}
+                                  style={{ height: 227 }}
                                   data-percent="71"
                                 >
                                   <span className="title">Reliable</span>
@@ -111,7 +111,7 @@ export class Qualities extends Component {
                                 <span className="percent">82%</span>
                                 <div
                                   className="item-progress"
-                                  style={{ Height: 262 }}
+                                  style={{ height: 262 }}
                                   data-percent="82"
                                 >
                                   <span className="title">Communication</span>
@@ -123,7 +123,7 @@ export class Qualities extends Component {
                                 <span className="percent">58%</span>
                                 <div
                                   className="item-progress"
-                                  style={{ Height: 185 }}
+                                  style={{ height: 185 }}
                                   data-percent="58"
                                 >
                                   <span className="title">Leadership</span>
@@ -135,7 +135,7 @@ export class Qualities extends Component {
                                 <span className="percent">67%</span>
                                 <div
                                   className="item-progress"
-                                  style={{ Height: 214 }}
+                                  style={{ height: 214 }}
                                   data-percent="67"
                                 >
                                   <span className="title">Persuasion</span>
@@ -165,22 +165,22 @@ export class Qualities extends Component {
                     <div className="row">
                       <div className="col-md-12 myStrengthsContent">
                         <div className="column-chart">
-                          <div className="hidden-xs legend legend-left">
+                        <ScrollAnimation offset={10} className="hidden-xs legend legend-left" animateIn='bounceInRight' animateOnce={true}>
                             <h3 className="legend-title">ME</h3>
-                          </div>
+                          </ScrollAnimation>
                           <div className="hidden-xs legend legend-right">
-                            <div className="item">
+                          <ScrollAnimation offset={10} className="item" animateIn='bounceInUp' animateOnce={true}>
                               <h4>Extreme</h4>
-                            </div>
-                            <div className="item">
+                            </ScrollAnimation>
+                            <ScrollAnimation offset={10} className="item" animateIn='bounceInUp' animateOnce={true}>
                               <h4>Less Extreme</h4>
-                            </div>
-                            <div className="item">
+                            </ScrollAnimation>
+                            <ScrollAnimation offset={10} className="item" animateIn='bounceInUp' animateOnce={true}>
                               <h4>Average</h4>
-                            </div>
-                            <div className="item">
+                            </ScrollAnimation>
+                            <ScrollAnimation offset={10} className="item" animateIn='bounceInUp' animateOnce={true}>
                               <h4>Newbie</h4>
-                            </div>
+                            </ScrollAnimation>
                           </div>
                           <div className="chart clearfix">
                             <div className="item">
@@ -188,7 +188,7 @@ export class Qualities extends Component {
                                 <span className="percent">50%</span>
                                 <div
                                   className="item-progress"
-                                  style={{ Height: 294.4 }}
+                                  style={{ height: 294.4 }}
                                   data-percent="50"
                                 >
                                   <span className="title">Denial</span>
@@ -200,7 +200,7 @@ export class Qualities extends Component {
                                 <span className="percent">35%</span>
                                 <div
                                   className="item-progress"
-                                  style={{ Height: 227.4 }}
+                                  style={{ height: 227.4 }}
                                   data-percent="35"
                                 >
                                   <span className="title">Anger</span>
@@ -212,7 +212,7 @@ export class Qualities extends Component {
                                 <span className="percent">60%</span>
                                 <div
                                   className="item-progress"
-                                  style={{ Height: 262.4 }}
+                                  style={{ height: 262.4 }}
                                   data-percent="60"
                                 >
                                   <span className="title">Bargaining</span>
@@ -224,7 +224,7 @@ export class Qualities extends Component {
                                 <span className="percent">55%</span>
                                 <div
                                   className="item-progress"
-                                  style={{ Height: 185.6 }}
+                                  style={{ height: 185.6 }}
                                   data-percent="55"
                                 >
                                   <span className="title">Depression</span>
@@ -236,7 +236,7 @@ export class Qualities extends Component {
                                 <span className="percent">80%</span>
                                 <div
                                   className="item-progress"
-                                  style={{ Height: 214.4 }}
+                                  style={{ height: 214.4 }}
                                   data-percent="80"
                                 >
                                   <span className="title">Acceptance</span>

@@ -5,6 +5,7 @@ import AccoladeItems from "./AccoladeItems";
 import MilestoneItems from "./MilestoneItems";
 import './Skills.css';
 import axios from 'axios';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export class Skills extends Component {
   state = {
@@ -22,12 +23,16 @@ export class Skills extends Component {
     axios.get(`https://rakeshchouhan.herokuapp.com/api/accolades`).then((res) => {
       this.setState({ accolades:res.data });
     });
+    axios.get(`https://rakeshchouhan.herokuapp.com/api/milestones`).then((res) => {
+      this.setState({ milestones:res.data });
+    });
     axios.get(`https://rakeshchouhan.herokuapp.com/api/skills`).then((res) => {
       this.setState({ skills1:res.data.slice(0, 6) });
       this.setState({ skills2:res.data.slice(6, 12) });
       this.setState({ skills3:res.data.slice(12, 18) });
     });
   }
+
   render() {
     return (
       <React.Fragment>
@@ -147,49 +152,49 @@ export class Skills extends Component {
               </div>
               <div className="work-process">
                 <div className="row">
-                  <div className="item col-md-2 col-sm-2 no-margin first">
+                <ScrollAnimation offset={10} className="item col-md-2 col-sm-2 no-margin first" animateIn='bounceInUp' animateOnce={true}>
                     <div className="inner-content">
                       <i className="icon-Files"></i>{" "}
                       <span className="title">1. Requirements</span>{" "}
                       <span className="dot"></span>
                     </div>
                     <i className="icon-Arrow icon-Down-3"></i>
-                  </div>
-                  <div className="item col-md-2 col-sm-2">
+                  </ScrollAnimation>
+                  <ScrollAnimation offset={10} className="item col-md-2 col-sm-2" animateIn='bounceInDown' animateOnce={true}>
                     <div className="inner-content">
                       <i className="icon-Pencil"></i>{" "}
                       <span className="title">2. Design</span>
                     </div>
                     <i className="icon-Arrow icon-Up-3"></i>
-                  </div>
-                  <div className="item col-md-2 col-sm-2 no-margin">
+                  </ScrollAnimation>
+                  <ScrollAnimation offset={10} className="item col-md-2 col-sm-2 no-margin" animateIn='bounceInUp' animateOnce={true}>
                     <div className="inner-content">
                       <i className="icon-Coding"></i>{" "}
                       <span className="title">3. Implement</span>
                     </div>
                     <i className="icon-Arrow icon-Down-3"></i>
-                  </div>
-                  <div className="item col-md-2 col-sm-2">
+                  </ScrollAnimation>
+                  <ScrollAnimation offset={10} className="item col-md-2 col-sm-2" animateIn='bounceInDown' animateOnce={true}>
                     <div className="inner-content">
                       <i className="icon-Bug"></i>{" "}
                       <span className="title">4. Test</span>
                     </div>
                     <i className="icon-Arrow icon-Up-3"></i>
-                  </div>
-                  <div className="item col-md-2 col-sm-2 no-margin">
+                  </ScrollAnimation>
+                  <ScrollAnimation offset={10} className="item col-md-2 col-sm-2 no-margin" animateIn='bounceInUp' animateOnce={true}>
                     <div className="inner-content">
                       <i className="icon-Rocket"></i>{" "}
                       <span className="title">5. Deliver</span>
                     </div>
                     <i className="icon-Arrow icon-Down-3"></i>
-                  </div>
-                  <div className="item col-md-2 col-sm-2 last">
+                  </ScrollAnimation>
+                  <ScrollAnimation offset={10} className="item col-md-2 col-sm-2 last" animateIn='bounceInDown' animateOnce={true}>
                     <div className="inner-content">
                       <i className="icon-Monitor-2"></i>{" "}
                       <span className="title">6. Support</span>{" "}
                       <span className="dot"></span>
                     </div>
-                  </div>
+                  </ScrollAnimation>
                 </div>
               </div>
               <div className="row">

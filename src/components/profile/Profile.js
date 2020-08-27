@@ -1,22 +1,19 @@
 import React, { Component } from "react";
-// import myProfile from "./Profile.json";
 import "./Profile.css";
 import axios from "axios";
-import shortid from "shortid";
+import ScrollAnimation from 'react-animate-on-scroll';
 
 export class Profile extends Component {
   state = {
     profile: [],
   };
+
   componentDidMount() {
     axios.get(`https://rakeshchouhan.herokuapp.com/api/profile`).then((res) => {
       this.setState({ profile:res.data });
+      this.forceUpdate();
     });
   }
-  getRandomKey = () => {
-    return shortid.generate();
-  }
-
   render() {
     return (
       <React.Fragment>
@@ -28,19 +25,24 @@ export class Profile extends Component {
                   <div className="padding-right-yes profile-text">
                     <div className="row">
                       <div className="col-md-12">
+                      <ScrollAnimation offset={10} animateIn='bounceInUp' animateOnce={true}>
                         <h2 className="section-title">
                           {this.props.title.title}
                         </h2>
+                        </ScrollAnimation>
+                        <ScrollAnimation offset={10} animateIn='bounceInUp' animateOnce={true}>
                         <p>{this.props.title.tagline}</p>
                         <span className="divider"></span>
                           <p
-                            key={this.getRandomKey}
+                            key={1}
                             className="text-grey"
                             dangerouslySetInnerHTML={{ __html: this.state.profile.map(data => data.body)}}
                           ></p>
+                          </ScrollAnimation>
                       </div>
                     </div>
                   </div>
+                  <ScrollAnimation offset={10} animateIn='fadeInRight' animateOnce={true}>
                   <div className="contact-details padding-right-yes">
                     <div className="row">
                       <div className="col-sm-6 col-md-5">
@@ -55,6 +57,7 @@ export class Profile extends Component {
                       </div>
                     </div>
                   </div>
+                  </ScrollAnimation>
                 </div>
                 <div className="hidden-xs col-md-5 hidden-sm match-height pp-wrapper">
                   <div className="profile-picture style-one top-profile">
