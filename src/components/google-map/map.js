@@ -41,7 +41,7 @@ const map = () => {
               >
                 <Marker
                   position={center}
-                  icon={{ url: '/assets/images/map-marker-icon.png' }}
+                  icon={{ url: 'https://ik.imagekit.io/rc/images/map-marker-icon_PJVYndbGF.png' }}
                 />
                 <></>
               </GoogleMap>

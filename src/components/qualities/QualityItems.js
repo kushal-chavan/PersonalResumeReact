@@ -15,15 +15,14 @@ export class QualityItems extends Component {
           <div key={item.id}
             className={
               (i + 1) % 2 === 0
-                ? "item col-md-4 col-sm-4 top dark-bg"
-                : "item col-md-4 col-sm-4 top"
+                ? "item col-md-4 col-sm-4 height top dark-bg"
+                : "item col-md-4 col-sm-4 height top"
             }
-            style={{height:'300px'}}
           >
             <div className="inner-content">
               <i className={"colored-text icon-" + item.icon}></i>
               <ScrollAnimation offset={10} animateIn='slideInUp' animateOnce={true}>
-              <h4>
+              <h4 style={{textTransform: 'uppercase', marginTop: '15px'}}>
                 {i + 1}. {item.title}
               </h4>
               </ScrollAnimation>

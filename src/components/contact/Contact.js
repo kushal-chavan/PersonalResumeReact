@@ -35,7 +35,7 @@ export class Contact extends Component {
                         id="saveForm"
                         name="saveForm"
                         type="image"
-                        src="assets/icons/sendEmail.png"
+                        src="https://ik.imagekit.io/rc/images/sendEmail_GFK8DTggh.png"
                       />
                     </div>
                     <h2>

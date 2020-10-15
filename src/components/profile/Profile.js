@@ -49,7 +49,7 @@ export class Profile extends Component {
                         <h4>Contact Details</h4>
                         {this.state.profile.map((s) => (
                           <ul
-                            key={s.id}
+                            key={s._id}
                             className="text-grey list-unstyled"
                             dangerouslySetInnerHTML={{ __html: s.contact }}
                           ></ul>

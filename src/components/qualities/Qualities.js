@@ -22,7 +22,8 @@ export class Qualities extends Component {
   render() {
     return (
       <React.Fragment>
-        <section className="section" id="qualities">
+        <section id="qualities">
+        <section className="section">
           <div className="section-wrapper container">
             <div className="section-content">
               <div className="row">
@@ -252,6 +253,7 @@ export class Qualities extends Component {
               </div>
             </div>
           </div>
+        </section>
         </section>
       </React.Fragment>
     );

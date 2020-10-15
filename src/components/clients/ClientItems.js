@@ -3,7 +3,7 @@ import React from "react";
 const ClientItems = (props) => {
   const items = props.clients.reverse().map((item) => {
     return (
-      <React.Fragment key={item.id}>
+      <React.Fragment key={item._id}>
         <div className="item">
           <div className="animated" data-animation-effect="flipInX">
             <div className="hidden-xs profile">

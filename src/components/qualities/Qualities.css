@@ -25,6 +25,15 @@
       height: 100%;
       border-right: 1px solid #3b3b3b;
     }
+    .height{
+      height:310px;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 900px) {
+    .height{
+      height:500px;
+    }
   }
   .qualities .item {
     padding: 0;
@@ -51,6 +60,7 @@
     .qualities .item > .inner-content {
       text-align: center;
     }
+
   }
   .qualities .item > .inner-content > i {
     font-size: 38px;

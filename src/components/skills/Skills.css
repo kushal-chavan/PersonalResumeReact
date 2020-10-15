@@ -73,6 +73,7 @@
   }
   #knowledge {
     background-color: #0d0c0d;
+    margin-top: 60px;
   }
   .bar-chart {
     position: relative;
@@ -127,6 +128,7 @@
 
   #accolades {
     background-color: #0d0c0d;
+    margin-top: 150px;
   }
   #accolades .bookmark {
     margin-top: 80px;
@@ -232,8 +234,11 @@
     font-weight: 700;
   }
   #work-process {
+    margin-top: 70px;
     background-color: #171717;
+    padding-bottom: 90px;
   }
+
   #work-process .divider {
     margin-bottom: 60px;
   }

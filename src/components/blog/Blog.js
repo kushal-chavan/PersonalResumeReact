@@ -12,7 +12,8 @@ export class Blog extends Component {
             width: '100%',
             position: 'absolute', 
             left: '0px', 
-            overflow: 'hidden'
+            overflow: 'hidden',
+            borderWidth: '0px'
           }}
         ></iframe>
       </React.Fragment>

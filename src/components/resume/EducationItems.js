@@ -4,7 +4,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 const EducationItems = (props) => {
   const items = props.educations.reverse().map((item, index) => {
     return (
-    <React.Fragment key={item.id}>
+    <React.Fragment key={item._id}>
      <ScrollAnimation offset={10} className="resume-item" animateIn='bounceInUp' animateOnce={true}>
           <div className="resume-year">
             <span className="resume-year">{item.duration}</span>

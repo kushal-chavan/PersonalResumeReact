@@ -4,13 +4,13 @@ import ScrollAnimation from 'react-animate-on-scroll';
 const ExperienceItems = (props) => {
   const items = props.experience.reverse().map((item) => {
     return (
-      <React.Fragment key={item.id}>
+      <React.Fragment key={item._id}>
           <ScrollAnimation offset={10} className="resume-item" animateIn='bounceInUp' animateOnce={true}>
             <div className="resume-year">
               <span className="resume-year">{item.year}</span>
             </div>
             <div className="resume-btn">
-              <a href={'#work'+item.id} data-parent="#work" data-toggle="collapse">
+              <a href={'#work'+item._id} data-parent="#work" data-toggle="collapse">
                 {null}
               </a>
             </div>

@@ -131,25 +131,86 @@ export class Header extends Component {
             <div className="collapse Chouhan-collapse navbar-collapse">
               <ul id="link-navbar" className="nav navbar-nav">
                 <li className="page-scroll">
-                  <Link to="home" smooth={true} duration={1000} style={{cursor: 'pointer'}}>Home</Link>
+                  <Link to="home" data-target=".Chouhan-collapse"
+                  data-toggle="collapse" 
+                  smooth={true} 
+                  activeClass="selected" 
+                  spy={true} 
+                  offset={-65} 
+                  duration={1000} 
+                  style={{cursor: 'pointer'}}
+                  >Home</Link>
                 </li>
                 <li className="page-scroll">
-                  <Link to="profile" smooth={true} duration={1000} style={{cursor: 'pointer'}}>I AM</Link>
+                  <Link to="profile" 
+                  data-target=".Chouhan-collapse"
+                  data-toggle="collapse" 
+                  smooth={true} 
+                  activeClass="selected" 
+                  spy={true} 
+                  offset={-65} 
+                  duration={1000} 
+                  style={{cursor: 'pointer'}}>I AM</Link>
                 </li>
                 <li className="page-scroll">
-                  <Link to="qualities" smooth={true} duration={1000} style={{cursor: 'pointer'}}>Qualities</Link>
+                  <Link to="qualities" 
+                  data-target=".Chouhan-collapse"
+                  data-toggle="collapse" 
+                  smooth={true} 
+                  activeClass="selected" 
+                  spy={true} 
+                  offset={-70} 
+                  duration={1000} 
+                  style={{cursor: 'pointer'}}
+                  >Qualities</Link>
                 </li>
                 <li className="page-scroll">
-                  <Link to="resume" smooth={true} duration={1000} style={{cursor: 'pointer'}}>Resume</Link>
+                  <Link to="resume" 
+                  data-target=".Chouhan-collapse"
+                  data-toggle="collapse" 
+                  smooth={true} 
+                  activeClass="selected" 
+                  spy={true} 
+                  offset={-50} 
+                  duration={1000} 
+                  style={{cursor: 'pointer'}}
+                  >Resume</Link>
                 </li>
                 <li className="page-scroll">
-                  <Link to="clients" smooth={true} duration={1000} style={{cursor: 'pointer'}}>Clients</Link>
+                  <Link to="clients" 
+                  data-target=".Chouhan-collapse"
+                  data-toggle="collapse" 
+                  smooth={true} 
+                  activeClass="selected" 
+                  spy={true} 
+                  offset={-50} 
+                  duration={1000} 
+                  style={{cursor: 'pointer'}}
+                  >Clients</Link>
                 </li>
                 <li className="page-scroll">
-                  <Link to="skills" smooth={true} duration={1000} style={{cursor: 'pointer'}}>Skills</Link>
+                  <Link to="skills" 
+                  data-target=".Chouhan-collapse"
+                  data-toggle="collapse" 
+                  smooth={true} 
+                  activeClass="selected" 
+                  spy={true} 
+                  offset={-50} 
+                  duration={1000} 
+                  style={{cursor: 'pointer'}}
+                  >Skills</Link>
                 </li>
                 <li className="page-scroll">
-                  <Link to="contact" smooth={true} duration={1000} style={{cursor: 'pointer'}}>Contact</Link>
+                  <Link to="contact" 
+                  data-target=".Chouhan-collapse"
+                  data-toggle="collapse" 
+                  smooth={true} 
+                  activeClass="selected" 
+                  spy={true} 
+                  offset={-60} 
+                  duration={1000} 
+                  style={{cursor: 'pointer'}}
+                  >Contact</Link>
                 </li>
                 <li>
                   <a href="/blog">Blog</a>

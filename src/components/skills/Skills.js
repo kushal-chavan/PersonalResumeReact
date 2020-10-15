@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import SkillsItems from "./SkillItems";
 import KnowledgeItems from "./KnowledgeItems";
 import AccoladeItems from "./AccoladeItems";
-import MilestoneItems from "./MilestoneItems";
+// import MilestoneItems from "./MilestoneItems";
 import './Skills.css';
 import axios from 'axios';
 import ScrollAnimation from 'react-animate-on-scroll';
@@ -14,17 +14,45 @@ export class Skills extends Component {
     skills3: [],
     knowledge: [],
     accolades: [],
-    milestones: [],
+    cupOfCoffee: 0,
+    workedHours: 0, 
+    projects: 0,
+    clients: 0,
+    experience: 0,
   };
-  componentDidMount() {
+
+  milestones(){
+    let consideredDate = "2009-01-01";
+    let cupOfCoffeeADay = 1;
+    let workingHoursPerDay = 8;
+    let projectsPerClient = 2;
+
+    let startDate = Date.parse(consideredDate);
+    let endDate = new Date();
+    let timeDiff = endDate - startDate;
+    let daysDiff =  Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    // cals
+    let currentExprience = Math.floor(daysDiff / 365);
+    let totalCoffees = cupOfCoffeeADay * daysDiff;
+    let clients = 11;
+    let totalProjects = (clients * projectsPerClient) + 3;
+    let work = workingHoursPerDay * daysDiff;
+
+    this.setState({ 
+      experience: currentExprience,
+      cupOfCoffee: totalCoffees,
+      workedHours: work,
+      projects: totalProjects,
+      clients: clients
+    });
+  }
+
+  callAPIs(){
     axios.get(`https://rakeshchouhan.herokuapp.com/api/knowledge`).then((res) => {
       this.setState({ knowledge:res.data });
     });
     axios.get(`https://rakeshchouhan.herokuapp.com/api/accolades`).then((res) => {
       this.setState({ accolades:res.data });
-    });
-    axios.get(`https://rakeshchouhan.herokuapp.com/api/milestones`).then((res) => {
-      this.setState({ milestones:res.data });
     });
     axios.get(`https://rakeshchouhan.herokuapp.com/api/skills`).then((res) => {
       this.setState({ skills1:res.data.slice(0, 6) });
@@ -32,10 +60,15 @@ export class Skills extends Component {
       this.setState({ skills3:res.data.slice(12, 18) });
     });
   }
+  componentDidMount() {
+    this.callAPIs();
+    this.milestones();
+  }
 
   render() {
     return (
       <React.Fragment>
+        <section id="skills">
         <section className="section" id="skills">
           <div className="section-wrapper container">
             <div className="section-content">
@@ -120,7 +153,26 @@ export class Skills extends Component {
               </div>
               <div className="milestones">
                 <div className="row">
-                  <MilestoneItems milestones={this.state.milestones} />
+                  <div className="item col-md-3 col-sm-6">
+                      <div className="circle"><i className="icon-Coffee"></i></div>
+                      <span className="number">{this.state.cupOfCoffee}</span>
+                      <h4>Cups of Coffee</h4>
+                  </div>
+                  <div className="item col-md-3 col-sm-6">
+                      <div className="circle"><i className="icon-Clock"></i></div>
+                      <span className="number">{this.state.workedHours}</span>
+                      <h4>Hours Worked</h4>
+                  </div>
+                  <div className="item col-md-3 col-sm-6">
+                      <div className="circle"><i className="icon-Coding"></i></div>
+                      <span className="number">{this.state.projects}</span>
+                      <h4>Succesful Projects</h4>
+                  </div>
+                  <div className="item col-md-3 col-sm-6">
+                      <div className="circle"><i className="icon-Smile"></i></div>
+                      <span className="number">{this.state.clients}</span>
+                      <h4>Happy Clients</h4>
+                  </div>
                 </div>
               </div>
             </div>
@@ -142,7 +194,7 @@ export class Skills extends Component {
               <div className="row">
                 <div className="col-md-12">
                   <p className="text-grey text-justify">
-                    With over 8 years of extensive experience and expertise
+                    With over {this.state.experience} years of extensive experience and expertise
                     across different domains with a variety of clients, I have
                     the competence to understand the clients business needs and
                     provide the client with cutting-edge software and mobile
@@ -214,6 +266,7 @@ export class Skills extends Component {
               </div>
             </div>
           </div>
+        </section>
         </section>
       </React.Fragment>
     );
