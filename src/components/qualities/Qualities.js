@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import QualityItems from "./QualityItems";
 import './Qualities.css';
+import { API_URL } from '../../constants'
 import axios from "axios";
 import ScrollAnimation from 'react-animate-on-scroll';
 
@@ -10,7 +11,7 @@ export class Qualities extends Component {
   };
 
   callAPI(){
-    axios.get(`https://rakeshchouhan.herokuapp.com/api/qualities`).then((res) => {
+    axios.get(`${API_URL}/qualities`).then((res) => {
       this.setState({ quality:res.data });
        this.forceUpdate();
     });

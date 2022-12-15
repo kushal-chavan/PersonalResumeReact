@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BLOG_URL } from '../../constants';
 
 export class Blog extends Component {
   render() {
@@ -6,7 +7,7 @@ export class Blog extends Component {
       <React.Fragment>
         <iframe
           title="blog"
-          src="https://chouhans.wordpress.com/"
+          src={BLOG_URL}
           style={{
             height: '100%', 
             width: '100%',

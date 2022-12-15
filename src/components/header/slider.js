@@ -4,7 +4,9 @@ import './Header.css';
 export class Slider extends Component {  
 componentDidMount(){
     setInterval(() => {
-      document.getElementById("slider-click").click();
+      if(document.getElementById("slider-click")) {
+        document.getElementById("slider-click").click();
+      }
     }, 10000)
 }
 

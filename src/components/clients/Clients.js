@@ -3,13 +3,14 @@ import Client from "./ClientItems";
 import './Clients.css' 
 import ClientsImage from "./ClientsImage";
 import axios from 'axios';
+import { API_URL } from '../../constants'
 
 export class Clients extends Component {
   state = {
     clients: [],
   };
   componentDidMount() {
-    axios.get(`https://rakeshchouhan.herokuapp.com/api/clients`)
+    axios.get(`${API_URL}/clients`)
       .then(res => {
         this.setState({ clients:res.data });
       })

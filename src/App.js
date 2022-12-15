@@ -18,7 +18,6 @@ export class App extends Component {
     return (
       <Router>
           <Switch>
-            <Route path="/blog" component={Blog} />
             <Route path="*" exact={true} component={Main} />
           </Switch>
       </Router>

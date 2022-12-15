@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./Profile.css";
 import axios from "axios";
 import ScrollAnimation from 'react-animate-on-scroll';
+import { API_URL, DOB } from '../../constants'
+import { getAge } from '../../utils';
 
 export class Profile extends Component {
   state = {
@@ -9,7 +11,7 @@ export class Profile extends Component {
   };
 
   componentDidMount() {
-    axios.get(`https://rakeshchouhan.herokuapp.com/api/profile`).then((res) => {
+    axios.get(`${API_URL}/profile`).then((res) => {
       this.setState({ profile:res.data });
       this.forceUpdate();
     });
@@ -31,7 +33,7 @@ export class Profile extends Component {
                         </h2>
                         </ScrollAnimation>
                         <ScrollAnimation offset={10} animateIn='bounceInUp' animateOnce={true}>
-                        <p>{this.props.title.tagline}</p>
+                        <p>{this.props.title.tagline.replace('33', getAge(DOB))}</p>
                         <span className="divider"></span>
                           <p
                             key={1}

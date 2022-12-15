@@ -7,26 +7,32 @@ import Clients from "../clients/Clients";
 import Skills from "../skills/Skills";
 import Contact from "../contact/Contact";
 import Footer from "../footer/Footer";
+import Blog from "../blog/Blog";
 import Loader from '../loader/loader';
 import axios from "axios";
-// import Titles from './title.json';
+import { API_URL } from '../../constants'
+// import Titles from './title';
 import "./Main.css";
 
 function renderChildComponent() {
-  const { title } = this.state;
-  const { slider } = this.state;
+  const { slider, title, blogOpen } = this.state;
 
   if (title && slider) {
     return (
       <React.Fragment>
-        <Header title={title.header} slider={slider}/>
-        <Profile title={title.profile} />
-        <Qualities title={title.qualities} />
-        <Resume title={title.resume} />
-        <Clients title={title.clients} />
-        <Skills title={title.skills} />
-        <Contact />
-        <Footer />
+        {!blogOpen && 
+          <>
+          <Header title={title.header} slider={slider} blog={() => {this.setState({blogOpen: true})}}/>
+          <Profile title={title.profile} />
+          <Qualities title={title.qualities} />
+          <Resume title={title.resume} />
+          <Clients title={title.clients} />
+          <Skills title={title.skills} />
+          <Contact />
+          <Footer />
+          </>
+        }
+        {blogOpen && <Blog />}
       </React.Fragment>
     );
   }
@@ -40,17 +46,18 @@ export class Main extends Component {
 
     this.state = {
       title: undefined,
-      slider:undefined
+      slider:undefined,
+      blogOpen: false
     };
   }
   
   callAPI() {
-    axios.get(`https://rakeshchouhan.herokuapp.com/api/slider`).then((res) => {
+    axios.get(`${API_URL}/slider`).then((res) => {
       setTimeout(()=>{
         this.setState({ slider:res.data });
       }, 500)  
     });
-    axios.get(`https://rakeshchouhan.herokuapp.com/api/title`).then((res) => {
+    axios.get(`${API_URL}/title`).then((res) => {
       this.setState({ title: res.data[0] });
     });
   }

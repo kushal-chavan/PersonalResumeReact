@@ -3,6 +3,7 @@ import "./Header.css";
 import axios from "axios";
 import "animate.css";
 import { Link } from 'react-scroll';
+import { API_URL } from '../../constants';
 import Slider from './slider';
 
 export class Header extends Component {
@@ -19,7 +20,7 @@ export class Header extends Component {
   }
 
   callAPI(){
-    axios.get(`https://rakeshchouhan.herokuapp.com/api/proverbs`).then((res) => {
+    axios.get(`${API_URL}/proverbs`).then((res) => {
       this.setState({ proverbs: res.data[0].inspirationalProverbs });
     });
   }
@@ -213,7 +214,7 @@ export class Header extends Component {
                   >Contact</Link>
                 </li>
                 <li>
-                  <a href="/blog">Blog</a>
+                  <a onClick={this.props.blog} href="#">Blog</a>
                 </li>
               </ul>
             </div>

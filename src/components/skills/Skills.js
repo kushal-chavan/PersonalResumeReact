@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import SkillsItems from "./SkillItems";
 import KnowledgeItems from "./KnowledgeItems";
 import AccoladeItems from "./AccoladeItems";
-// import MilestoneItems from "./MilestoneItems";
 import './Skills.css';
 import axios from 'axios';
 import ScrollAnimation from 'react-animate-on-scroll';
+import { API_URL, consideredDate, cupOfCoffeeADay, workingHoursPerDay, projectsPerClient, clients } from '../../constants';
+
 
 export class Skills extends Component {
   state = {
@@ -22,11 +23,6 @@ export class Skills extends Component {
   };
 
   milestones(){
-    let consideredDate = "2009-01-01";
-    let cupOfCoffeeADay = 1;
-    let workingHoursPerDay = 8;
-    let projectsPerClient = 2;
-
     let startDate = Date.parse(consideredDate);
     let endDate = new Date();
     let timeDiff = endDate - startDate;
@@ -34,7 +30,6 @@ export class Skills extends Component {
     // cals
     let currentExprience = Math.floor(daysDiff / 365);
     let totalCoffees = cupOfCoffeeADay * daysDiff;
-    let clients = 11;
     let totalProjects = (clients * projectsPerClient) + 3;
     let work = workingHoursPerDay * daysDiff;
 
@@ -48,13 +43,13 @@ export class Skills extends Component {
   }
 
   callAPIs(){
-    axios.get(`https://rakeshchouhan.herokuapp.com/api/knowledge`).then((res) => {
+    axios.get(`${API_URL}/knowledge`).then((res) => {
       this.setState({ knowledge:res.data });
     });
-    axios.get(`https://rakeshchouhan.herokuapp.com/api/accolades`).then((res) => {
+    axios.get(`${API_URL}/accolades`).then((res) => {
       this.setState({ accolades:res.data });
     });
-    axios.get(`https://rakeshchouhan.herokuapp.com/api/skills`).then((res) => {
+    axios.get(`${API_URL}/skills`).then((res) => {
       this.setState({ skills1:res.data.slice(0, 6) });
       this.setState({ skills2:res.data.slice(6, 12) });
       this.setState({ skills3:res.data.slice(12, 18) });

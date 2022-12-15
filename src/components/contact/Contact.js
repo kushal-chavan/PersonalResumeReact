@@ -51,7 +51,7 @@ export class Contact extends Component {
                 <div className="col-md-8 col-md-offset-2">
                   <form
                     style={{display:this.state.contactForm}}
-                    action="https://rakeshchouhan.com/services/contact/sendEmail.php"
+                    action="https://react.rakeshchouhan.com/services/contact/sendEmail.php"
                     className="contact-form element-line validate"
                     id="contact-form"
                     method="POST"

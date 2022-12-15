@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Experience from "./ExperienceItems";
 import EducationItems from "./EducationItems";
+import { API_URL } from '../../constants'
 import './Resume.css';
 import axios from 'axios';
 
@@ -10,10 +11,10 @@ export class Resume extends Component {
     educations: [],
   };
   componentDidMount() {
-    axios.get(`https://rakeshchouhan.herokuapp.com/api/education`).then((res) => {
+    axios.get(`${API_URL}/education`).then((res) => {
       this.setState({ educations:res.data });
     });
-    axios.get(`https://rakeshchouhan.herokuapp.com/api/work`).then((res) => {
+    axios.get(`${API_URL}/work`).then((res) => {
       this.setState({ experience:res.data });
     });
   }
