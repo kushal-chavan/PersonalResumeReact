@@ -1,6 +1,7 @@
 // export const API_URL = 'https://react.rakeshchouhan.com/api_data/' // Backup URI
 export const API_URL = 'https://nice-pear-tortoise-cap.cyclic.app/api'
 export const BLOG_URL = 'https://chouhans.wordpress.com/';
+export const ARK_BLOG_URL = 'https://medium.com/@thearkinnovations';
 // Profile
 export const DOB = '1985/12/15'
 

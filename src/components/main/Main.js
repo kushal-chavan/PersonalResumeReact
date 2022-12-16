@@ -15,14 +15,18 @@ import { API_URL } from '../../constants'
 import "./Main.css";
 
 function renderChildComponent() {
-  const { slider, title, blogOpen } = this.state;
+  const { slider, title, blogType } = this.state;
+
+  const selectBlog = event => {
+    this.setState({blogType: event})
+  }
 
   if (title && slider) {
     return (
       <React.Fragment>
-        {!blogOpen && 
+        {!blogType && 
           <>
-          <Header title={title.header} slider={slider} blog={() => {this.setState({blogOpen: true})}}/>
+          <Header title={title.header} slider={slider} blog={selectBlog}/>
           <Profile title={title.profile} />
           <Qualities title={title.qualities} />
           <Resume title={title.resume} />
@@ -32,7 +36,7 @@ function renderChildComponent() {
           <Footer />
           </>
         }
-        {blogOpen && <Blog />}
+        {blogType && <Blog blogType={blogType}/>}
       </React.Fragment>
     );
   }
@@ -47,7 +51,7 @@ export class Main extends Component {
     this.state = {
       title: undefined,
       slider:undefined,
-      blogOpen: false
+      blogType: ''
     };
   }
   

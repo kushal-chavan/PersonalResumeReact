@@ -3,7 +3,7 @@ import "./Header.css";
 import axios from "axios";
 import "animate.css";
 import { Link } from 'react-scroll';
-import { API_URL } from '../../constants';
+import { API_URL, ARK_BLOG_URL } from '../../constants';
 import Slider from './slider';
 
 export class Header extends Component {
@@ -214,7 +214,10 @@ export class Header extends Component {
                   >Contact</Link>
                 </li>
                 <li>
-                  <a onClick={this.props.blog} href="#">Blog</a>
+                  <a onClick={() => this.props.blog('blog')} href="#blog">Blog</a>
+                </li>
+                <li>
+                  <a href={ARK_BLOG_URL} target="_blank">ARK Blog</a>
                 </li>
               </ul>
             </div>

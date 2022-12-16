@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BLOG_URL } from '../../constants';
+import { BLOG_URL, ARK_BLOG_URL } from '../../constants';
 
 export class Blog extends Component {
   render() {
@@ -7,7 +7,7 @@ export class Blog extends Component {
       <React.Fragment>
         <iframe
           title="blog"
-          src={BLOG_URL}
+          src={this.props.blogType === 'blog' ? BLOG_URL:''}
           style={{
             height: '100%', 
             width: '100%',
